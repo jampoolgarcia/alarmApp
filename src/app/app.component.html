@@ -319,6 +319,24 @@
 
 </div>
 
+
+
+<div class="container">
+
+  <button class="btn waves-effect waves-light" type="button" name="action">Submit
+    <i class="material-icons right">add-alarm</i>
+  </button>
+
+  <h3 *ngIf="seconds == 0; else sleeping">{{ alarmMessage }}</h3>
+
+  <ng-template #sleeping>
+    <h3>keep sleeping... don't worry!!!</h3>
+  </ng-template>
+
+  <app-alarm-clock></app-alarm-clock>
+</div>
+
+
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
 <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
