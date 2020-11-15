@@ -24,9 +24,14 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/materialize-css/dist/css/materialize.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/hammerjs/hammer.js",
+              "node_modules/materialize-css/dist/js/materialize.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -88,10 +93,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "node_modules/materialize-css/dist/css/materialize.css"
+              "node_modules/materialize-css/dist/css/materialize.css",
+              "src/styles.css"
             ],
             "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/hammerjs/hammer.js",
               "node_modules/materialize-css/dist/js/materialize.js"
             ]
           }
@@ -122,6 +129,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "alarmApp"
+    }
+  },
+  "defaultProject": "alarmApp",
+  "cli": {
+    "analytics": "dbf0687e-0250-4d78-8aba-9adc43dc8057"
+  }
 }
