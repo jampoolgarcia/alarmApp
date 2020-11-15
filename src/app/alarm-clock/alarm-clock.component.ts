@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-alarm-clock',
@@ -7,16 +7,31 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class AlarmClockComponent implements OnInit {
 
-  @Input() startTime =10;
+  @Input() startTime;
   @Input() messageToShow = "hi";
+  @Output() notification = new EventEmitter();
+  sentMessage= false;
+  @Input() alarmList;
 
   constructor() { }
 
   ngOnInit(): void {
     setInterval(() =>{
-      if(this.startTime>0){
-        this.startTime--;  
+      if(this.startTime == 0){
+        if(this.sentMessage== false){
+          this.notification.emit({time: this.startTime, message: "Hi..."})
+          this.sentMessage= true;
+        }
+      }else{
+        if(this.startTime>0){
+          this.sentMessage= false;
+          this.startTime--;  
+        }else{
+          this.startTime = "--";
+        }
       }
+
+      
     }, 100)
   }
 

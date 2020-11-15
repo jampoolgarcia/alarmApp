@@ -1,3 +1,41 @@
-<div class="clock">
-    {{ startTime }}  
-</div>
+
+<div class="row">
+    <div class="col s2 offset-s5">
+      <div class="card  red lighten-2">
+        <div class="card-content white-text">
+            <h3 class="center">{{ startTime }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<br>
+
+
+<div class="row">
+    <div class="col s6 offset-s3">
+      <div class="card">
+        <div class="card-content">
+                <table class="striped centered">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Time</th>
+                            <th>Message</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let alarm of alarmList">
+                            <td>{{ alarm.id }}</td>
+                            <td>{{ alarm.time }}</td>
+                            <td>{{ alarm.message }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+

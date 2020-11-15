@@ -323,7 +323,7 @@
 
 <div class="container">
 
-  <button class="btn waves-effect waves-light" type="button" (click)="getRandomSeconds()" name="action">Submit
+  <button class="btn waves-effect waves-light light-blue darken-3" type="button" (click)="getRandomSeconds()" name="action">Submit
     <i class="material-icons right">add-alarm</i>
   </button>
 
@@ -333,7 +333,7 @@
     <h3>keep sleeping... don't worry!!!</h3>
   </ng-template>
 
-  <app-alarm-clock startTime="{{seconds}}"></app-alarm-clock>
+  <app-alarm-clock (notification)="showWakeUpMessage($event)" startTime="{{seconds}}" [alarmList]="alarmClockArray"></app-alarm-clock>
 </div>
 
 <br>
